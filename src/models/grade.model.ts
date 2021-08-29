@@ -11,10 +11,10 @@ export class Grade extends Entity {
 
   @property({
     type: 'array',
-    itemType: 'number',
+    itemType: 'any',
     required: true,
   })
-  grade: number[];
+  grade: any[];
 
   @property({
     type: 'string',

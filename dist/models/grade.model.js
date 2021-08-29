@@ -19,7 +19,7 @@ tslib_1.__decorate([
 tslib_1.__decorate([
     repository_1.property({
         type: 'array',
-        itemType: 'number',
+        itemType: 'any',
         required: true,
     }),
     tslib_1.__metadata("design:type", Array)

@@ -1,7 +1,7 @@
 import { Entity } from '@loopback/repository';
 export declare class Grade extends Entity {
     id?: string;
-    grade: number[];
+    grade: any[];
     userId?: string;
     classroomId?: string;
     constructor(data?: Partial<Grade>);
