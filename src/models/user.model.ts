@@ -45,6 +45,11 @@ export class User extends Entity {
   })
   profile: string;
 
+  @property({
+    type: 'string'
+  })
+  photo?: string
+
   @hasMany(() => Grade)
   grades: Grade[];
 

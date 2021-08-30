@@ -134,6 +134,29 @@ let FileController = class FileController {
             throw new rest_1.HttpErrors.NotFound('El curso al que se desea subir archivos no existe.');
         }
     }
+    async uploadProfilePhoto(id, response, request) {
+        let user = await this.userRepository.findById(id);
+        if (!user) {
+            throw new rest_1.HttpErrors.NotFound('El usuario no existe');
+        }
+        const filePath = path_1.default.join(__dirname, lib_1.UploadFilesKeys.FILES_PATH + 'profilePhotos/');
+        let res = await this.StoreFileToPath(filePath, lib_1.UploadFilesKeys.FIELDNAME, request, response, lib_1.UploadFilesKeys.ACCEPTED_EXT);
+        if (res) {
+            const file = {
+                name: request.file.originalname,
+                size: request.file.size,
+                type: request.file.mimetype,
+                uploaded: new Date().toDateString(),
+                url: 'http://' + request.headers.host + '/profilePhotos/' + request.file.filename,
+                user: user.toString(),
+                extension: request.file.originalname.substr(request.file.originalname.lastIndexOf('.') + 1),
+            };
+            const createdFile = await this.fileRepository.create(file);
+            user.photo = file.url;
+            await this.userRepository.updateById(user.getId(), user);
+            return createdFile;
+        }
+    }
     // almacenamiento
     GetMulterStorageConfig(storagePath) {
         var filename = '';
@@ -384,6 +407,15 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:paramtypes", [String, Object, Object]),
     tslib_1.__metadata("design:returntype", Promise)
 ], FileController.prototype, "uploadFileByUser", null);
+tslib_1.__decorate([
+    rest_1.post('/uploadProfilePhoto/{userId}'),
+    tslib_1.__param(0, rest_1.param.path.string('userId')),
+    tslib_1.__param(1, core_1.inject(rest_1.RestBindings.Http.RESPONSE)),
+    tslib_1.__param(2, rest_1.requestBody.file()),
+    tslib_1.__metadata("design:type", Function),
+    tslib_1.__metadata("design:paramtypes", [String, Object, Object]),
+    tslib_1.__metadata("design:returntype", Promise)
+], FileController.prototype, "uploadProfilePhoto", null);
 FileController = tslib_1.__decorate([
     tslib_1.__param(0, repository_1.repository(repositories_1.FileRepository)),
     tslib_1.__param(1, repository_1.repository(repositories_1.ClassroomRepository)),

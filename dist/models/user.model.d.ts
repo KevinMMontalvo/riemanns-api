@@ -8,6 +8,7 @@ export declare class User extends Entity {
     idCard: string;
     comment?: string;
     profile: string;
+    photo?: string;
     grades: Grade[];
     constructor(data?: Partial<User>);
 }

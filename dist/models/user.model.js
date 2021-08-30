@@ -59,6 +59,12 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:type", String)
 ], User.prototype, "profile", void 0);
 tslib_1.__decorate([
+    repository_1.property({
+        type: 'string'
+    }),
+    tslib_1.__metadata("design:type", String)
+], User.prototype, "photo", void 0);
+tslib_1.__decorate([
     repository_1.hasMany(() => grade_model_1.Grade),
     tslib_1.__metadata("design:type", Array)
 ], User.prototype, "grades", void 0);

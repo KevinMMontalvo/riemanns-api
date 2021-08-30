@@ -19,6 +19,7 @@ export declare class FileController {
     uploadFileByClassroom(id: string, response: Response, request: Request): Promise<any>;
     uploadVideoByClassroom(id: string, response: Response, request: Request): Promise<any>;
     uploadFileByUser(id: string, response: Response, request: Request): Promise<any>;
+    uploadProfilePhoto(id: string, response: Response, request: Request): Promise<any>;
     private GetMulterStorageConfig;
     private StoreFileToPath;
 }

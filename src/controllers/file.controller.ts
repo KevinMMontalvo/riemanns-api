@@ -360,6 +360,40 @@ export class FileController
 		}
 	}
 
+	@post('/uploadProfilePhoto/{userId}')
+	async uploadProfilePhoto(
+		@param.path.string('userId') id: string,
+		@inject(RestBindings.Http.RESPONSE) response: Response,
+		@requestBody.file() request: Request,
+	): Promise<any>
+	{
+		let user = await this.userRepository.findById(id);
+		if (!user)
+		{
+			throw new HttpErrors.NotFound('El usuario no existe');
+		}
+
+		const filePath = path.join(__dirname, UploadFilesKeys.FILES_PATH + 'profilePhotos/');
+		let res = await this.StoreFileToPath(filePath, UploadFilesKeys.FIELDNAME, request, response, UploadFilesKeys.ACCEPTED_EXT);
+		if (res)
+		{
+			const file: Partial<File> = {
+				name: request.file.originalname,
+				size: request.file.size,
+				type: request.file.mimetype,
+				uploaded: new Date().toDateString(),
+				url: 'http://' + request.headers.host + '/profilePhotos/' + request.file.filename,
+				user: user.toString(),
+				extension: request.file.originalname.substr(request.file.originalname.lastIndexOf('.') + 1),
+			};
+			const createdFile = await this.fileRepository.create(file);
+			user.photo = file.url;
+			await this.userRepository.updateById(user.getId(), user);
+			return createdFile;
+		}
+
+	}
+
 	// almacenamiento
 
 	private GetMulterStorageConfig(storagePath: string)
