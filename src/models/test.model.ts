@@ -1,19 +1,26 @@
 import {Entity, model, property} from '@loopback/repository';
 
-@model({settings: {strict: false}})
+@model()
 export class Test extends Entity {
   @property({
-    type: 'array',
-    itemType: 'number',
+    type: 'string',
+    id: true,
+    generated: true,
+  })
+  id?: string;
+
+  @property({
+    type: 'string',
     required: true,
   })
-  tet: number[];
+  name: string;
 
-  // Define well-known properties here
+  @property({
+    type: 'number',
+    required: true,
+  })
+  time: number;
 
-  // Indexer property to allow additional data
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [prop: string]: any;
 
   constructor(data?: Partial<Test>) {
     super(data);

@@ -1,7 +1,8 @@
 import { Entity } from '@loopback/repository';
 export declare class Test extends Entity {
-    tet: number[];
-    [prop: string]: any;
+    id?: string;
+    name: string;
+    time: number;
     constructor(data?: Partial<Test>);
 }
 export interface TestRelations {

@@ -7,3 +7,4 @@ export * from './user-grade.controller';
 export * from './classroom-grade.controller';
 export * from './grade.controller';
 export * from './organization-setup.controller';
+export * from './test.controller';
