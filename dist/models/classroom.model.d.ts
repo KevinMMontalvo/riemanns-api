@@ -3,6 +3,7 @@ import { Event } from './event.model';
 import { File } from './file.model';
 import { User } from './user.model';
 import { Grade } from './grade.model';
+import { Test } from './test.model';
 export declare class Classroom extends Entity {
     id?: string;
     code?: string;
@@ -17,6 +18,7 @@ export declare class Classroom extends Entity {
     quizzes?: any[];
     activities?: any[];
     grades: Grade[];
+    tests: Test[];
     constructor(data?: Partial<Classroom>);
 }
 export interface ClassroomRelations {

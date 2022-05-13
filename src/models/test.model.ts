@@ -21,6 +21,10 @@ export class Test extends Entity {
   })
   time: number;
 
+  @property({
+    type: 'string',
+  })
+  classroomId?: string;
 
   constructor(data?: Partial<Test>) {
     super(data);

@@ -3,6 +3,7 @@ import {Event} from './event.model';
 import {File} from './file.model';
 import {User} from './user.model';
 import {Grade} from './grade.model';
+import {Test} from './test.model';
 
 @model()
 export class Classroom extends Entity {
@@ -88,6 +89,9 @@ export class Classroom extends Entity {
 
   @hasMany(() => Grade)
   grades: Grade[];
+
+  @hasMany(() => Test)
+  tests: Test[];
 
   constructor(data?: Partial<Classroom>) {
     super(data);
