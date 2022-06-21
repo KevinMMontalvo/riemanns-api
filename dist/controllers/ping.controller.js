@@ -49,7 +49,7 @@ let PingController = class PingController {
     }
 };
 tslib_1.__decorate([
-    rest_1.get('/ping', {
+    (0, rest_1.get)('/ping', {
         responses: {
             '200': PING_RESPONSE,
         },
@@ -59,7 +59,7 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", Object)
 ], PingController.prototype, "ping", null);
 PingController = tslib_1.__decorate([
-    tslib_1.__param(0, core_1.inject(rest_1.RestBindings.Http.REQUEST)),
+    tslib_1.__param(0, (0, core_1.inject)(rest_1.RestBindings.Http.REQUEST)),
     tslib_1.__metadata("design:paramtypes", [Object])
 ], PingController);
 exports.PingController = PingController;

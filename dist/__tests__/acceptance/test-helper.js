@@ -4,7 +4,7 @@ exports.setupApplication = void 0;
 const __1 = require("../..");
 const testlab_1 = require("@loopback/testlab");
 async function setupApplication() {
-    const restConfig = testlab_1.givenHttpServerConfig({
+    const restConfig = (0, testlab_1.givenHttpServerConfig)({
     // Customize the server configuration here.
     // Empty values (undefined, '') will be ignored by the helper.
     //
@@ -16,7 +16,7 @@ async function setupApplication() {
     });
     await app.boot();
     await app.start();
-    const client = testlab_1.createRestAppClient(app);
+    const client = (0, testlab_1.createRestAppClient)(app);
     return { app, client };
 }
 exports.setupApplication = setupApplication;

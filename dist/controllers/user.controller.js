@@ -77,18 +77,18 @@ let UserController = class UserController {
     }
 };
 tslib_1.__decorate([
-    rest_1.post('/users', {
+    (0, rest_1.post)('/users', {
         responses: {
             '200': {
                 description: 'User model instance',
-                content: { 'application/json': { schema: rest_1.getModelSchemaRef(models_1.User) } },
+                content: { 'application/json': { schema: (0, rest_1.getModelSchemaRef)(models_1.User) } },
             },
         },
     }),
-    tslib_1.__param(0, rest_1.requestBody({
+    tslib_1.__param(0, (0, rest_1.requestBody)({
         content: {
             'application/json': {
-                schema: rest_1.getModelSchemaRef(models_1.User, {
+                schema: (0, rest_1.getModelSchemaRef)(models_1.User, {
                     title: 'NewUser',
                     exclude: ['id'],
                 }),
@@ -100,7 +100,7 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", Promise)
 ], UserController.prototype, "create", null);
 tslib_1.__decorate([
-    rest_1.get('/users/count', {
+    (0, rest_1.get)('/users/count', {
         responses: {
             '200': {
                 description: 'User model count',
@@ -114,7 +114,7 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", Promise)
 ], UserController.prototype, "count", null);
 tslib_1.__decorate([
-    rest_1.get('/users', {
+    (0, rest_1.get)('/users', {
         responses: {
             '200': {
                 description: 'Array of User model instances',
@@ -122,7 +122,7 @@ tslib_1.__decorate([
                     'application/json': {
                         schema: {
                             type: 'array',
-                            items: rest_1.getModelSchemaRef(models_1.User, { includeRelations: true }),
+                            items: (0, rest_1.getModelSchemaRef)(models_1.User, { includeRelations: true }),
                         },
                     },
                 },
@@ -135,7 +135,7 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", Promise)
 ], UserController.prototype, "find", null);
 tslib_1.__decorate([
-    rest_1.patch('/users', {
+    (0, rest_1.patch)('/users', {
         responses: {
             '200': {
                 description: 'User PATCH success count',
@@ -143,10 +143,10 @@ tslib_1.__decorate([
             },
         },
     }),
-    tslib_1.__param(0, rest_1.requestBody({
+    tslib_1.__param(0, (0, rest_1.requestBody)({
         content: {
             'application/json': {
-                schema: rest_1.getModelSchemaRef(models_1.User, { partial: true }),
+                schema: (0, rest_1.getModelSchemaRef)(models_1.User, { partial: true }),
             },
         },
     })),
@@ -156,13 +156,13 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", Promise)
 ], UserController.prototype, "updateAll", null);
 tslib_1.__decorate([
-    rest_1.get('/users/{id}', {
+    (0, rest_1.get)('/users/{id}', {
         responses: {
             '200': {
                 description: 'User model instance',
                 content: {
                     'application/json': {
-                        schema: rest_1.getModelSchemaRef(models_1.User, { includeRelations: true }),
+                        schema: (0, rest_1.getModelSchemaRef)(models_1.User, { includeRelations: true }),
                     },
                 },
             },
@@ -175,7 +175,7 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", Promise)
 ], UserController.prototype, "findById", null);
 tslib_1.__decorate([
-    rest_1.patch('/users/{id}', {
+    (0, rest_1.patch)('/users/{id}', {
         responses: {
             '204': {
                 description: 'User PATCH success',
@@ -183,10 +183,10 @@ tslib_1.__decorate([
         },
     }),
     tslib_1.__param(0, rest_1.param.path.string('id')),
-    tslib_1.__param(1, rest_1.requestBody({
+    tslib_1.__param(1, (0, rest_1.requestBody)({
         content: {
             'application/json': {
-                schema: rest_1.getModelSchemaRef(models_1.User, { partial: true }),
+                schema: (0, rest_1.getModelSchemaRef)(models_1.User, { partial: true }),
             },
         },
     })),
@@ -195,7 +195,7 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", Promise)
 ], UserController.prototype, "updateById", null);
 tslib_1.__decorate([
-    rest_1.put('/users/{id}', {
+    (0, rest_1.put)('/users/{id}', {
         responses: {
             '204': {
                 description: 'User PUT success',
@@ -203,13 +203,13 @@ tslib_1.__decorate([
         },
     }),
     tslib_1.__param(0, rest_1.param.path.string('id')),
-    tslib_1.__param(1, rest_1.requestBody()),
+    tslib_1.__param(1, (0, rest_1.requestBody)()),
     tslib_1.__metadata("design:type", Function),
     tslib_1.__metadata("design:paramtypes", [String, models_1.User]),
     tslib_1.__metadata("design:returntype", Promise)
 ], UserController.prototype, "replaceById", null);
 tslib_1.__decorate([
-    rest_1.del('/users/{id}', {
+    (0, rest_1.del)('/users/{id}', {
         responses: {
             '204': {
                 description: 'User DELETE success',
@@ -222,15 +222,15 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", Promise)
 ], UserController.prototype, "deleteById", null);
 tslib_1.__decorate([
-    rest_1.post('/users/authenticate', {
+    (0, rest_1.post)('/users/authenticate', {
         responses: {
             '200': {
                 description: 'User model instance',
-                content: { 'application/json': { schema: rest_1.getModelSchemaRef(models_1.User) } },
+                content: { 'application/json': { schema: (0, rest_1.getModelSchemaRef)(models_1.User) } },
             },
         },
     }),
-    tslib_1.__param(0, rest_1.requestBody({
+    tslib_1.__param(0, (0, rest_1.requestBody)({
         content: {
             'application/json': {
                 credentials: models_1.Credentials,
@@ -242,13 +242,13 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", Promise)
 ], UserController.prototype, "authenticate", null);
 tslib_1.__decorate([
-    rest_1.get('/usersByProfile/{profile}', {
+    (0, rest_1.get)('/usersByProfile/{profile}', {
         responses: {
             '200': {
                 description: 'User model instance',
                 content: {
                     'application/json': {
-                        schema: rest_1.getModelSchemaRef(models_1.User, { includeRelations: true }),
+                        schema: (0, rest_1.getModelSchemaRef)(models_1.User, { includeRelations: true }),
                     },
                 },
             },
@@ -260,8 +260,8 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", Promise)
 ], UserController.prototype, "findByProfile", null);
 UserController = tslib_1.__decorate([
-    tslib_1.__param(0, repository_1.repository(repositories_2.UserRepository)),
-    tslib_1.__param(1, repository_1.repository(repositories_1.ClassroomRepository)),
+    tslib_1.__param(0, (0, repository_1.repository)(repositories_2.UserRepository)),
+    tslib_1.__param(1, (0, repository_1.repository)(repositories_1.ClassroomRepository)),
     tslib_1.__metadata("design:paramtypes", [repositories_2.UserRepository,
         repositories_1.ClassroomRepository])
 ], UserController);

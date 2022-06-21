@@ -10,7 +10,7 @@ const path_1 = tslib_1.__importDefault(require("path"));
 const lib_1 = require("../lib");
 const models_1 = require("../models");
 const repositories_1 = require("../repositories");
-multer_1.default({
+(0, multer_1.default)({
     limits: { fileSize: lib_1.UploadFilesKeys.MAX_FILE_SIZE },
 });
 let FileController = class FileController {
@@ -174,7 +174,7 @@ let FileController = class FileController {
     StoreFileToPath(storePath, fieldname, request, response, acceptedExt) {
         return new Promise((resolve, reject) => {
             const storage = this.GetMulterStorageConfig(storePath);
-            const upload = multer_1.default({
+            const upload = (0, multer_1.default)({
                 storage: storage,
                 fileFilter: function (req, file, callback) {
                     var ext = path_1.default.extname(file.originalname).toUpperCase();
@@ -197,18 +197,18 @@ let FileController = class FileController {
     }
 };
 tslib_1.__decorate([
-    rest_1.post('/files', {
+    (0, rest_1.post)('/files', {
         responses: {
             '200': {
                 description: 'File model instance',
-                content: { 'application/json': { schema: rest_1.getModelSchemaRef(models_1.File) } },
+                content: { 'application/json': { schema: (0, rest_1.getModelSchemaRef)(models_1.File) } },
             },
         },
     }),
-    tslib_1.__param(0, rest_1.requestBody({
+    tslib_1.__param(0, (0, rest_1.requestBody)({
         content: {
             'application/json': {
-                schema: rest_1.getModelSchemaRef(models_1.File, {
+                schema: (0, rest_1.getModelSchemaRef)(models_1.File, {
                     title: 'NewFile',
                     exclude: ['id'],
                 }),
@@ -220,7 +220,7 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", Promise)
 ], FileController.prototype, "create", null);
 tslib_1.__decorate([
-    rest_1.get('/files/count', {
+    (0, rest_1.get)('/files/count', {
         responses: {
             '200': {
                 description: 'File model count',
@@ -234,7 +234,7 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", Promise)
 ], FileController.prototype, "count", null);
 tslib_1.__decorate([
-    rest_1.get('/files', {
+    (0, rest_1.get)('/files', {
         responses: {
             '200': {
                 description: 'Array of File model instances',
@@ -242,7 +242,7 @@ tslib_1.__decorate([
                     'application/json': {
                         schema: {
                             type: 'array',
-                            items: rest_1.getModelSchemaRef(models_1.File, { includeRelations: true }),
+                            items: (0, rest_1.getModelSchemaRef)(models_1.File, { includeRelations: true }),
                         },
                     },
                 },
@@ -255,7 +255,7 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", Promise)
 ], FileController.prototype, "find", null);
 tslib_1.__decorate([
-    rest_1.patch('/files', {
+    (0, rest_1.patch)('/files', {
         responses: {
             '200': {
                 description: 'File PATCH success count',
@@ -263,10 +263,10 @@ tslib_1.__decorate([
             },
         },
     }),
-    tslib_1.__param(0, rest_1.requestBody({
+    tslib_1.__param(0, (0, rest_1.requestBody)({
         content: {
             'application/json': {
-                schema: rest_1.getModelSchemaRef(models_1.File, { partial: true }),
+                schema: (0, rest_1.getModelSchemaRef)(models_1.File, { partial: true }),
             },
         },
     })),
@@ -276,13 +276,13 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", Promise)
 ], FileController.prototype, "updateAll", null);
 tslib_1.__decorate([
-    rest_1.get('/files/{id}', {
+    (0, rest_1.get)('/files/{id}', {
         responses: {
             '200': {
                 description: 'File model instance',
                 content: {
                     'application/json': {
-                        schema: rest_1.getModelSchemaRef(models_1.File, { includeRelations: true }),
+                        schema: (0, rest_1.getModelSchemaRef)(models_1.File, { includeRelations: true }),
                     },
                 },
             },
@@ -295,7 +295,7 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", Promise)
 ], FileController.prototype, "findById", null);
 tslib_1.__decorate([
-    rest_1.patch('/files/{id}', {
+    (0, rest_1.patch)('/files/{id}', {
         responses: {
             '204': {
                 description: 'File PATCH success',
@@ -303,10 +303,10 @@ tslib_1.__decorate([
         },
     }),
     tslib_1.__param(0, rest_1.param.path.string('id')),
-    tslib_1.__param(1, rest_1.requestBody({
+    tslib_1.__param(1, (0, rest_1.requestBody)({
         content: {
             'application/json': {
-                schema: rest_1.getModelSchemaRef(models_1.File, { partial: true }),
+                schema: (0, rest_1.getModelSchemaRef)(models_1.File, { partial: true }),
             },
         },
     })),
@@ -315,7 +315,7 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", Promise)
 ], FileController.prototype, "updateById", null);
 tslib_1.__decorate([
-    rest_1.put('/files/{id}', {
+    (0, rest_1.put)('/files/{id}', {
         responses: {
             '204': {
                 description: 'File PUT success',
@@ -323,13 +323,13 @@ tslib_1.__decorate([
         },
     }),
     tslib_1.__param(0, rest_1.param.path.string('id')),
-    tslib_1.__param(1, rest_1.requestBody()),
+    tslib_1.__param(1, (0, rest_1.requestBody)()),
     tslib_1.__metadata("design:type", Function),
     tslib_1.__metadata("design:paramtypes", [String, models_1.File]),
     tslib_1.__metadata("design:returntype", Promise)
 ], FileController.prototype, "replaceById", null);
 tslib_1.__decorate([
-    rest_1.del('/files/{id}', {
+    (0, rest_1.del)('/files/{id}', {
         responses: {
             '204': {
                 description: 'File DELETE success',
@@ -342,7 +342,7 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", Promise)
 ], FileController.prototype, "deleteById", null);
 tslib_1.__decorate([
-    rest_1.post('/uploadFile/byClassroom/{id}', {
+    (0, rest_1.post)('/uploadFile/byClassroom/{id}', {
         responses: {
             200: {
                 content: {
@@ -357,14 +357,14 @@ tslib_1.__decorate([
         },
     }),
     tslib_1.__param(0, rest_1.param.path.string('id')),
-    tslib_1.__param(1, core_1.inject(rest_1.RestBindings.Http.RESPONSE)),
+    tslib_1.__param(1, (0, core_1.inject)(rest_1.RestBindings.Http.RESPONSE)),
     tslib_1.__param(2, rest_1.requestBody.file()),
     tslib_1.__metadata("design:type", Function),
     tslib_1.__metadata("design:paramtypes", [String, Object, Object]),
     tslib_1.__metadata("design:returntype", Promise)
 ], FileController.prototype, "uploadFileByClassroom", null);
 tslib_1.__decorate([
-    rest_1.post('/uploadVideo/byClassroom/{id}', {
+    (0, rest_1.post)('/uploadVideo/byClassroom/{id}', {
         responses: {
             200: {
                 content: {
@@ -379,14 +379,14 @@ tslib_1.__decorate([
         },
     }),
     tslib_1.__param(0, rest_1.param.path.string('id')),
-    tslib_1.__param(1, core_1.inject(rest_1.RestBindings.Http.RESPONSE)),
+    tslib_1.__param(1, (0, core_1.inject)(rest_1.RestBindings.Http.RESPONSE)),
     tslib_1.__param(2, rest_1.requestBody.file()),
     tslib_1.__metadata("design:type", Function),
     tslib_1.__metadata("design:paramtypes", [String, Object, Object]),
     tslib_1.__metadata("design:returntype", Promise)
 ], FileController.prototype, "uploadVideoByClassroom", null);
 tslib_1.__decorate([
-    rest_1.post('/uploadFile/byUser/{id}', {
+    (0, rest_1.post)('/uploadFile/byUser/{id}', {
         responses: {
             200: {
                 content: {
@@ -401,25 +401,25 @@ tslib_1.__decorate([
         },
     }),
     tslib_1.__param(0, rest_1.param.path.string('id')),
-    tslib_1.__param(1, core_1.inject(rest_1.RestBindings.Http.RESPONSE)),
+    tslib_1.__param(1, (0, core_1.inject)(rest_1.RestBindings.Http.RESPONSE)),
     tslib_1.__param(2, rest_1.requestBody.file()),
     tslib_1.__metadata("design:type", Function),
     tslib_1.__metadata("design:paramtypes", [String, Object, Object]),
     tslib_1.__metadata("design:returntype", Promise)
 ], FileController.prototype, "uploadFileByUser", null);
 tslib_1.__decorate([
-    rest_1.post('/uploadProfilePhoto/{userId}'),
+    (0, rest_1.post)('/uploadProfilePhoto/{userId}'),
     tslib_1.__param(0, rest_1.param.path.string('userId')),
-    tslib_1.__param(1, core_1.inject(rest_1.RestBindings.Http.RESPONSE)),
+    tslib_1.__param(1, (0, core_1.inject)(rest_1.RestBindings.Http.RESPONSE)),
     tslib_1.__param(2, rest_1.requestBody.file()),
     tslib_1.__metadata("design:type", Function),
     tslib_1.__metadata("design:paramtypes", [String, Object, Object]),
     tslib_1.__metadata("design:returntype", Promise)
 ], FileController.prototype, "uploadProfilePhoto", null);
 FileController = tslib_1.__decorate([
-    tslib_1.__param(0, repository_1.repository(repositories_1.FileRepository)),
-    tslib_1.__param(1, repository_1.repository(repositories_1.ClassroomRepository)),
-    tslib_1.__param(2, repository_1.repository(repositories_1.UserRepository)),
+    tslib_1.__param(0, (0, repository_1.repository)(repositories_1.FileRepository)),
+    tslib_1.__param(1, (0, repository_1.repository)(repositories_1.ClassroomRepository)),
+    tslib_1.__param(2, (0, repository_1.repository)(repositories_1.UserRepository)),
     tslib_1.__metadata("design:paramtypes", [repositories_1.FileRepository,
         repositories_1.ClassroomRepository,
         repositories_1.UserRepository])

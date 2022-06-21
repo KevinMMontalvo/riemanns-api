@@ -18,13 +18,13 @@ let UserGradeController = class UserGradeController {
     }
 };
 tslib_1.__decorate([
-    rest_1.get('/users/{id}/grades', {
+    (0, rest_1.get)('/users/{id}/grades', {
         responses: {
             '200': {
                 description: 'Array of User has many Grade',
                 content: {
                     'application/json': {
-                        schema: { type: 'array', items: rest_1.getModelSchemaRef(models_1.Grade) },
+                        schema: { type: 'array', items: (0, rest_1.getModelSchemaRef)(models_1.Grade) },
                     },
                 },
             },
@@ -37,7 +37,7 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", Promise)
 ], UserGradeController.prototype, "find", null);
 tslib_1.__decorate([
-    rest_1.patch('/users/{id}/grades', {
+    (0, rest_1.patch)('/users/{id}/grades', {
         responses: {
             '200': {
                 description: 'User.Grade PATCH success count',
@@ -46,20 +46,20 @@ tslib_1.__decorate([
         },
     }),
     tslib_1.__param(0, rest_1.param.path.string('id')),
-    tslib_1.__param(1, rest_1.requestBody({
+    tslib_1.__param(1, (0, rest_1.requestBody)({
         content: {
             'application/json': {
-                schema: rest_1.getModelSchemaRef(models_1.Grade, { partial: true }),
+                schema: (0, rest_1.getModelSchemaRef)(models_1.Grade, { partial: true }),
             },
         },
     })),
-    tslib_1.__param(2, rest_1.param.query.object('where', rest_1.getWhereSchemaFor(models_1.Grade))),
+    tslib_1.__param(2, rest_1.param.query.object('where', (0, rest_1.getWhereSchemaFor)(models_1.Grade))),
     tslib_1.__metadata("design:type", Function),
     tslib_1.__metadata("design:paramtypes", [String, Object, Object]),
     tslib_1.__metadata("design:returntype", Promise)
 ], UserGradeController.prototype, "patch", null);
 UserGradeController = tslib_1.__decorate([
-    tslib_1.__param(0, repository_1.repository(repositories_1.UserRepository)),
+    tslib_1.__param(0, (0, repository_1.repository)(repositories_1.UserRepository)),
     tslib_1.__metadata("design:paramtypes", [repositories_1.UserRepository])
 ], UserGradeController);
 exports.UserGradeController = UserGradeController;

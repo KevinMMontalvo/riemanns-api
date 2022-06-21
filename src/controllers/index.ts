@@ -9,3 +9,5 @@ export * from './grade.controller';
 export * from './organization-setup.controller';
 export * from './test.controller';
 export * from './classroom-test.controller';
+export * from './test-question.controller';
+export * from './questions.controller';

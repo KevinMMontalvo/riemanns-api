@@ -5,3 +5,4 @@ export * from './file.repository';
 export * from './grade.repository';
 export * from './organization-setup.repository';
 export * from './test.repository';
+export * from './question.repository';

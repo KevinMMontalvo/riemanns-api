@@ -38,14 +38,14 @@ let OrganizationSetupController = class OrganizationSetupController {
     }
 };
 tslib_1.__decorate([
-    rest_1.get('/organization-setups'),
-    rest_1.response(200, {
+    (0, rest_1.get)('/organization-setups'),
+    (0, rest_1.response)(200, {
         description: 'Array of OrganizationSetup model instances',
         content: {
             'application/json': {
                 schema: {
                     type: 'array',
-                    items: rest_1.getModelSchemaRef(models_1.OrganizationSetup, { includeRelations: true }),
+                    items: (0, rest_1.getModelSchemaRef)(models_1.OrganizationSetup, { includeRelations: true }),
                 },
             },
         },
@@ -56,12 +56,12 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", Promise)
 ], OrganizationSetupController.prototype, "find", null);
 tslib_1.__decorate([
-    rest_1.get('/organization-setups/{id}'),
-    rest_1.response(200, {
+    (0, rest_1.get)('/organization-setups/{id}'),
+    (0, rest_1.response)(200, {
         description: 'OrganizationSetup model instance',
         content: {
             'application/json': {
-                schema: rest_1.getModelSchemaRef(models_1.OrganizationSetup, { includeRelations: true }),
+                schema: (0, rest_1.getModelSchemaRef)(models_1.OrganizationSetup, { includeRelations: true }),
             },
         },
     }),
@@ -72,7 +72,7 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", Promise)
 ], OrganizationSetupController.prototype, "findById", null);
 OrganizationSetupController = tslib_1.__decorate([
-    tslib_1.__param(0, repository_1.repository(repositories_1.OrganizationSetupRepository)),
+    tslib_1.__param(0, (0, repository_1.repository)(repositories_1.OrganizationSetupRepository)),
     tslib_1.__metadata("design:paramtypes", [repositories_1.OrganizationSetupRepository])
 ], OrganizationSetupController);
 exports.OrganizationSetupController = OrganizationSetupController;

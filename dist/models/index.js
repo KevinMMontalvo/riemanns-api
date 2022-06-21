@@ -10,4 +10,6 @@ tslib_1.__exportStar(require("./file.model"), exports);
 tslib_1.__exportStar(require("./grade.model"), exports);
 tslib_1.__exportStar(require("./test.model"), exports);
 tslib_1.__exportStar(require("./organization-setup.model"), exports);
+tslib_1.__exportStar(require("./question.model"), exports);
+tslib_1.__exportStar(require("./option.model"), exports);
 //# sourceMappingURL=index.js.map

@@ -7,3 +7,5 @@ export * from './file.model';
 export * from './grade.model';
 export * from './test.model';
 export * from './organization-setup.model';
+export * from './question.model';
+export * from './option.model';

@@ -12,4 +12,6 @@ tslib_1.__exportStar(require("./grade.controller"), exports);
 tslib_1.__exportStar(require("./organization-setup.controller"), exports);
 tslib_1.__exportStar(require("./test.controller"), exports);
 tslib_1.__exportStar(require("./classroom-test.controller"), exports);
+tslib_1.__exportStar(require("./test-question.controller"), exports);
+tslib_1.__exportStar(require("./questions.controller"), exports);
 //# sourceMappingURL=index.js.map

@@ -5,7 +5,7 @@ describe('HomePage', () => {
     let app;
     let client;
     before('setupApplication', async () => {
-        ({ app, client } = await test_helper_1.setupApplication());
+        ({ app, client } = await (0, test_helper_1.setupApplication)());
     });
     after(async () => {
         await app.stop();

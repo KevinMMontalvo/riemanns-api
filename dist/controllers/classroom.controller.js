@@ -162,18 +162,18 @@ let ClassroomController = class ClassroomController {
     }
 };
 tslib_1.__decorate([
-    rest_1.post('/classrooms', {
+    (0, rest_1.post)('/classrooms', {
         responses: {
             '200': {
                 description: 'Classroom model instance',
-                content: { 'application/json': { schema: rest_1.getModelSchemaRef(models_1.Classroom) } },
+                content: { 'application/json': { schema: (0, rest_1.getModelSchemaRef)(models_1.Classroom) } },
             },
         },
     }),
-    tslib_1.__param(0, rest_1.requestBody({
+    tslib_1.__param(0, (0, rest_1.requestBody)({
         content: {
             'application/json': {
-                schema: rest_1.getModelSchemaRef(models_1.Classroom, {
+                schema: (0, rest_1.getModelSchemaRef)(models_1.Classroom, {
                     title: 'NewClassroom',
                     exclude: ['id'],
                 }),
@@ -185,7 +185,7 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", Promise)
 ], ClassroomController.prototype, "create", null);
 tslib_1.__decorate([
-    rest_1.get('/classrooms/count', {
+    (0, rest_1.get)('/classrooms/count', {
         responses: {
             '200': {
                 description: 'Classroom model count',
@@ -199,7 +199,7 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", Promise)
 ], ClassroomController.prototype, "count", null);
 tslib_1.__decorate([
-    rest_1.get('/classrooms', {
+    (0, rest_1.get)('/classrooms', {
         responses: {
             '200': {
                 description: 'Array of Classroom model instances',
@@ -207,7 +207,7 @@ tslib_1.__decorate([
                     'application/json': {
                         schema: {
                             type: 'array',
-                            items: rest_1.getModelSchemaRef(models_1.Classroom, { includeRelations: true }),
+                            items: (0, rest_1.getModelSchemaRef)(models_1.Classroom, { includeRelations: true }),
                         },
                     },
                 },
@@ -220,7 +220,7 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", Promise)
 ], ClassroomController.prototype, "find", null);
 tslib_1.__decorate([
-    rest_1.patch('/classrooms', {
+    (0, rest_1.patch)('/classrooms', {
         responses: {
             '200': {
                 description: 'Classroom PATCH success count',
@@ -228,10 +228,10 @@ tslib_1.__decorate([
             },
         },
     }),
-    tslib_1.__param(0, rest_1.requestBody({
+    tslib_1.__param(0, (0, rest_1.requestBody)({
         content: {
             'application/json': {
-                schema: rest_1.getModelSchemaRef(models_1.Classroom, { partial: true }),
+                schema: (0, rest_1.getModelSchemaRef)(models_1.Classroom, { partial: true }),
             },
         },
     })),
@@ -241,13 +241,13 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", Promise)
 ], ClassroomController.prototype, "updateAll", null);
 tslib_1.__decorate([
-    rest_1.get('/classrooms/{id}', {
+    (0, rest_1.get)('/classrooms/{id}', {
         responses: {
             '200': {
                 description: 'Classroom model instance',
                 content: {
                     'application/json': {
-                        schema: rest_1.getModelSchemaRef(models_1.Classroom, { includeRelations: true }),
+                        schema: (0, rest_1.getModelSchemaRef)(models_1.Classroom, { includeRelations: true }),
                     },
                 },
             },
@@ -260,7 +260,7 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", Promise)
 ], ClassroomController.prototype, "findById", null);
 tslib_1.__decorate([
-    rest_1.patch('/classrooms/{id}', {
+    (0, rest_1.patch)('/classrooms/{id}', {
         responses: {
             '204': {
                 description: 'Classroom PATCH success',
@@ -268,10 +268,10 @@ tslib_1.__decorate([
         },
     }),
     tslib_1.__param(0, rest_1.param.path.string('id')),
-    tslib_1.__param(1, rest_1.requestBody({
+    tslib_1.__param(1, (0, rest_1.requestBody)({
         content: {
             'application/json': {
-                schema: rest_1.getModelSchemaRef(models_1.Classroom, { partial: true }),
+                schema: (0, rest_1.getModelSchemaRef)(models_1.Classroom, { partial: true }),
             },
         },
     })),
@@ -280,7 +280,7 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", Promise)
 ], ClassroomController.prototype, "updateById", null);
 tslib_1.__decorate([
-    rest_1.put('/classrooms/{id}', {
+    (0, rest_1.put)('/classrooms/{id}', {
         responses: {
             '204': {
                 description: 'Classroom PUT success',
@@ -288,13 +288,13 @@ tslib_1.__decorate([
         },
     }),
     tslib_1.__param(0, rest_1.param.path.string('id')),
-    tslib_1.__param(1, rest_1.requestBody()),
+    tslib_1.__param(1, (0, rest_1.requestBody)()),
     tslib_1.__metadata("design:type", Function),
     tslib_1.__metadata("design:paramtypes", [String, models_1.Classroom]),
     tslib_1.__metadata("design:returntype", Promise)
 ], ClassroomController.prototype, "replaceById", null);
 tslib_1.__decorate([
-    rest_1.del('/classrooms/{id}', {
+    (0, rest_1.del)('/classrooms/{id}', {
         responses: {
             '204': {
                 description: 'Classroom DELETE success',
@@ -307,7 +307,7 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", Promise)
 ], ClassroomController.prototype, "deleteById", null);
 tslib_1.__decorate([
-    rest_1.get('/classrooms/byTeacher/{id}', {
+    (0, rest_1.get)('/classrooms/byTeacher/{id}', {
         responses: {
             '200': {
                 description: 'Array of Classroom model instances',
@@ -315,7 +315,7 @@ tslib_1.__decorate([
                     'application/json': {
                         schema: {
                             type: 'array',
-                            items: rest_1.getModelSchemaRef(models_1.Classroom, { includeRelations: true }),
+                            items: (0, rest_1.getModelSchemaRef)(models_1.Classroom, { includeRelations: true }),
                         },
                     },
                 },
@@ -329,7 +329,7 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", Promise)
 ], ClassroomController.prototype, "findByTeacherId", null);
 tslib_1.__decorate([
-    rest_1.get('/classrooms/byStudent/{id}', {
+    (0, rest_1.get)('/classrooms/byStudent/{id}', {
         responses: {
             '200': {
                 description: 'Array of Classroom model instances',
@@ -337,7 +337,7 @@ tslib_1.__decorate([
                     'application/json': {
                         schema: {
                             type: 'array',
-                            items: rest_1.getModelSchemaRef(models_1.Classroom, { includeRelations: true }),
+                            items: (0, rest_1.getModelSchemaRef)(models_1.Classroom, { includeRelations: true }),
                         },
                     },
                 },
@@ -351,7 +351,7 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", Promise)
 ], ClassroomController.prototype, "findByStudentId", null);
 tslib_1.__decorate([
-    rest_1.patch('/classrooms/addIntervention/{forumId}/{classroomId}', {
+    (0, rest_1.patch)('/classrooms/addIntervention/{forumId}/{classroomId}', {
         responses: {
             '204': {
                 description: 'Classroom PATCH success',
@@ -360,7 +360,7 @@ tslib_1.__decorate([
     }),
     tslib_1.__param(0, rest_1.param.path.string('forumId')),
     tslib_1.__param(1, rest_1.param.path.string('classroomId')),
-    tslib_1.__param(2, rest_1.requestBody({
+    tslib_1.__param(2, (0, rest_1.requestBody)({
         content: {
             'application/json': {},
         },
@@ -370,7 +370,7 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", Promise)
 ], ClassroomController.prototype, "addIntervention", null);
 tslib_1.__decorate([
-    rest_1.patch('/classrooms/addActivity/{activityId}/{classroomId}', {
+    (0, rest_1.patch)('/classrooms/addActivity/{activityId}/{classroomId}', {
         responses: {
             '204': {
                 description: 'Classroom PATCH success',
@@ -379,7 +379,7 @@ tslib_1.__decorate([
     }),
     tslib_1.__param(0, rest_1.param.path.string('activityId')),
     tslib_1.__param(1, rest_1.param.path.string('classroomId')),
-    tslib_1.__param(2, rest_1.requestBody({
+    tslib_1.__param(2, (0, rest_1.requestBody)({
         content: {
             'application/json': {},
         },
@@ -389,7 +389,7 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", Promise)
 ], ClassroomController.prototype, "addActivity", null);
 tslib_1.__decorate([
-    rest_1.patch('/classrooms/addQuiz/{quizId}/{classroomId}', {
+    (0, rest_1.patch)('/classrooms/addQuiz/{quizId}/{classroomId}', {
         responses: {
             '204': {
                 description: 'Classroom PATCH success',
@@ -398,7 +398,7 @@ tslib_1.__decorate([
     }),
     tslib_1.__param(0, rest_1.param.path.string('quizId')),
     tslib_1.__param(1, rest_1.param.path.string('classroomId')),
-    tslib_1.__param(2, rest_1.requestBody({
+    tslib_1.__param(2, (0, rest_1.requestBody)({
         content: {
             'application/json': {},
         },
@@ -408,9 +408,9 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", Promise)
 ], ClassroomController.prototype, "addQuiz", null);
 ClassroomController = tslib_1.__decorate([
-    tslib_1.__param(0, repository_1.repository(repositories_1.ClassroomRepository)),
-    tslib_1.__param(1, repository_1.repository(repositories_1.UserRepository)),
-    tslib_1.__param(2, repository_1.repository(repositories_1.FileRepository)),
+    tslib_1.__param(0, (0, repository_1.repository)(repositories_1.ClassroomRepository)),
+    tslib_1.__param(1, (0, repository_1.repository)(repositories_1.UserRepository)),
+    tslib_1.__param(2, (0, repository_1.repository)(repositories_1.FileRepository)),
     tslib_1.__metadata("design:paramtypes", [repositories_1.ClassroomRepository,
         repositories_1.UserRepository,
         repositories_1.FileRepository])

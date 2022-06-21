@@ -43,7 +43,7 @@ declare const Application_base: (new (...args: any[]) => {
     unsubscribe: (observer: import("@loopback/core").ContextEventObserver) => boolean;
     close: () => void;
     isSubscribed: (observer: import("@loopback/core").ContextObserver) => boolean;
-    createView: <T_7 = unknown>(filter: import("@loopback/core").BindingFilter, comparator?: import("@loopback/core").BindingComparator | undefined) => import("@loopback/core").ContextView<T_7>;
+    createView: <T_7 = unknown>(filter: import("@loopback/core").BindingFilter, comparator?: import("@loopback/core").BindingComparator | undefined, options?: Omit<import("@loopback/core").ResolutionOptions, "session"> | undefined) => import("@loopback/core").ContextView<T_7>;
     contains: (key: import("@loopback/core").BindingAddress<unknown>) => boolean;
     isBound: (key: import("@loopback/core").BindingAddress<unknown>) => boolean;
     getOwnerContext: (keyOrBinding: import("@loopback/core").BindingAddress<unknown> | Readonly<import("@loopback/boot").Binding<unknown>>) => import("@loopback/core").Context | undefined;
@@ -87,14 +87,14 @@ declare const Application_base: (new (...args: any[]) => {
     listeners: (event: string | symbol) => Function[];
     rawListeners: (event: string | symbol) => Function[];
     emit: (event: string | symbol, ...args: any[]) => boolean;
-    listenerCount: (type: string | symbol) => number;
+    listenerCount: (event: string | symbol) => number;
     prependListener: (event: string | symbol, listener: (...args: any[]) => void) => import("@loopback/core").Application;
     prependOnceListener: (event: string | symbol, listener: (...args: any[]) => void) => import("@loopback/core").Application;
     eventNames: () => (string | symbol)[];
 }) & (new (...args: any[]) => {
     serviceProvider<S_1>(provider: import("@loopback/core").Constructor<import("@loopback/core").Provider<S_1>>, nameOrOptions?: string | import("@loopback/core").ServiceOptions | undefined): import("@loopback/boot").Binding<S_1>;
     component<C_1 extends import("@loopback/core").Component = import("@loopback/core").Component>(componentCtor: import("@loopback/core").Constructor<C_1>, nameOrOptions?: string | import("@loopback/core").BindingFromClassOptions | undefined): import("@loopback/boot").Binding<C_1>;
-    mountComponentServices<C_1_1 extends import("@loopback/core").Component = import("@loopback/core").Component>(component: import("@loopback/core").Constructor<C_1_1>, componentBindingKey?: import("@loopback/core").BindingAddress<C_1_1> | undefined): void;
+    mountComponentServices<C_1 extends import("@loopback/core").Component = import("@loopback/core").Component>(component: import("@loopback/core").Constructor<C_1>, componentBindingKey?: import("@loopback/core").BindingAddress<C_1> | undefined): void;
     readonly options: ApplicationConfig;
     readonly state: string;
     controller: <T_1_1>(controllerCtor: import("@loopback/core").ControllerClass<T_1_1>, nameOrOptions?: string | import("@loopback/core").BindingFromClassOptions | undefined) => import("@loopback/boot").Binding<T_1_1>;
@@ -109,7 +109,7 @@ declare const Application_base: (new (...args: any[]) => {
     onStop: (fn: () => import("@loopback/core").ValueOrPromise<void>) => import("@loopback/boot").Binding<import("@loopback/core").LifeCycleObserver>;
     setMetadata: (metadata: import("@loopback/core").ApplicationMetadata) => void;
     lifeCycleObserver: <T_5_1 extends import("@loopback/core").LifeCycleObserver>(ctor: import("@loopback/core").Constructor<T_5_1>, nameOrOptions?: string | import("@loopback/core").BindingFromClassOptions | undefined) => import("@loopback/boot").Binding<T_5_1>;
-    service: <S_1_1>(cls: import("@loopback/core").ServiceOrProviderClass<S_1_1>, nameOrOptions?: string | import("@loopback/core").ServiceOptions | undefined) => import("@loopback/boot").Binding<S_1_1>;
+    service: <S_1>(cls: import("@loopback/core").ServiceOrProviderClass<S_1>, nameOrOptions?: string | import("@loopback/core").ServiceOptions | undefined) => import("@loopback/boot").Binding<S_1>;
     interceptor: (interceptor: import("@loopback/core").Interceptor | import("@loopback/core").Constructor<import("@loopback/core").Provider<import("@loopback/core").Interceptor>>, nameOrOptions?: string | import("@loopback/core").InterceptorBindingOptions | undefined) => import("@loopback/boot").Binding<import("@loopback/core").Interceptor>;
     readonly name: string;
     readonly subscriptionManager: import("@loopback/core").ContextSubscriptionManager;
@@ -128,7 +128,7 @@ declare const Application_base: (new (...args: any[]) => {
     unsubscribe: (observer: import("@loopback/core").ContextEventObserver) => boolean;
     close: () => void;
     isSubscribed: (observer: import("@loopback/core").ContextObserver) => boolean;
-    createView: <T_7_1 = unknown>(filter: import("@loopback/core").BindingFilter, comparator?: import("@loopback/core").BindingComparator | undefined) => import("@loopback/core").ContextView<T_7_1>;
+    createView: <T_7_1 = unknown>(filter: import("@loopback/core").BindingFilter, comparator?: import("@loopback/core").BindingComparator | undefined, options?: Omit<import("@loopback/core").ResolutionOptions, "session"> | undefined) => import("@loopback/core").ContextView<T_7_1>;
     contains: (key: import("@loopback/core").BindingAddress<unknown>) => boolean;
     isBound: (key: import("@loopback/core").BindingAddress<unknown>) => boolean;
     getOwnerContext: (keyOrBinding: import("@loopback/core").BindingAddress<unknown> | Readonly<import("@loopback/boot").Binding<unknown>>) => import("@loopback/core").Context | undefined;
@@ -172,7 +172,7 @@ declare const Application_base: (new (...args: any[]) => {
     listeners: (event: string | symbol) => Function[];
     rawListeners: (event: string | symbol) => Function[];
     emit: (event: string | symbol, ...args: any[]) => boolean;
-    listenerCount: (type: string | symbol) => number;
+    listenerCount: (event: string | symbol) => number;
     prependListener: (event: string | symbol, listener: (...args: any[]) => void) => import("@loopback/core").Application;
     prependOnceListener: (event: string | symbol, listener: (...args: any[]) => void) => import("@loopback/core").Application;
     eventNames: () => (string | symbol)[];
@@ -218,7 +218,7 @@ declare const Application_base: (new (...args: any[]) => {
     unsubscribe: (observer: import("@loopback/core").ContextEventObserver) => boolean;
     close: () => void;
     isSubscribed: (observer: import("@loopback/core").ContextObserver) => boolean;
-    createView: <T_7_2 = unknown>(filter: import("@loopback/core").BindingFilter, comparator?: import("@loopback/core").BindingComparator | undefined) => import("@loopback/core").ContextView<T_7_2>;
+    createView: <T_7_2 = unknown>(filter: import("@loopback/core").BindingFilter, comparator?: import("@loopback/core").BindingComparator | undefined, options?: Omit<import("@loopback/core").ResolutionOptions, "session"> | undefined) => import("@loopback/core").ContextView<T_7_2>;
     contains: (key: import("@loopback/core").BindingAddress<unknown>) => boolean;
     isBound: (key: import("@loopback/core").BindingAddress<unknown>) => boolean;
     getOwnerContext: (keyOrBinding: import("@loopback/core").BindingAddress<unknown> | Readonly<import("@loopback/boot").Binding<unknown>>) => import("@loopback/core").Context | undefined;
@@ -262,7 +262,7 @@ declare const Application_base: (new (...args: any[]) => {
     listeners: (event: string | symbol) => Function[];
     rawListeners: (event: string | symbol) => Function[];
     emit: (event: string | symbol, ...args: any[]) => boolean;
-    listenerCount: (type: string | symbol) => number;
+    listenerCount: (event: string | symbol) => number;
     prependListener: (event: string | symbol, listener: (...args: any[]) => void) => import("@loopback/core").Application;
     prependOnceListener: (event: string | symbol, listener: (...args: any[]) => void) => import("@loopback/core").Application;
     eventNames: () => (string | symbol)[];

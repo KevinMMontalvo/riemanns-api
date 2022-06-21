@@ -9,7 +9,7 @@ let Profile = class Profile extends repository_1.Entity {
     }
 };
 tslib_1.__decorate([
-    repository_1.property({
+    (0, repository_1.property)({
         type: 'string',
         id: true,
         generated: true,
@@ -17,21 +17,21 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:type", String)
 ], Profile.prototype, "id", void 0);
 tslib_1.__decorate([
-    repository_1.property({
+    (0, repository_1.property)({
         type: 'string',
         required: true,
     }),
     tslib_1.__metadata("design:type", String)
 ], Profile.prototype, "name", void 0);
 tslib_1.__decorate([
-    repository_1.property({
+    (0, repository_1.property)({
         type: 'string',
         required: true,
     }),
     tslib_1.__metadata("design:type", String)
 ], Profile.prototype, "route", void 0);
 Profile = tslib_1.__decorate([
-    repository_1.model(),
+    (0, repository_1.model)(),
     tslib_1.__metadata("design:paramtypes", [Object])
 ], Profile);
 exports.Profile = Profile;
